@@ -1,0 +1,55 @@
+/*Add in every post where you need timer button */
+/*Timer by Umair Javed - Youtube.com/umairjaved */
+
+<div dir="ltr" style="text-align: left;" trbidi="on">
+<center>
+<span id="countdown" style="font-size: 25px; font-weight: bold">You have to wait 10 seconds.</span></center>
+<br />
+<div style="text-align: center;">
+  <b>Download Timer</b><br /><a href="#"><button id="download_link" style="display:none">DOWNLOAD NOW</button></a> 
+<noscript>JavaScript needs to be enabled in order to be able to download.</noscript>
+<script type="application/javascript">
+(function(){
+   var message = "%d seconds before download link appears";
+   // seconds before download link becomes visible
+   var count = 10;
+   var countdown_element = document.getElementById("countdown");
+   var download_link = document.getElementById("download_link");
+   var timer = setInterval(function(){
+      // if countdown equals 0, the next condition will evaluate to false and the else-construct will be executed
+      if (count) {
+          // display text
+          countdown_element.innerHTML = "You have to wait %d seconds.".replace("%d", count);
+          // decrease counter
+          count--;
+      } else {
+          // stop timer
+          clearInterval(timer);
+          // hide countdown
+          countdown_element.style.display = "none";
+          // show download link
+          download_link.style.display = "";
+      }
+   }, 1000);
+})();
+</script>
+</div>
+</div>
+
+
+
+/*Add in HTML of your theme*/
+<style>
+  
+  #download_link{
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+    font-weight: bold;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+cursor: pointer;
+  }
+</style>
